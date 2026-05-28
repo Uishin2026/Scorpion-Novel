@@ -1,0 +1,374 @@
+@charset "UTF-8";
+/*変数・関数*/
+$letter:#333;
+$bg:#fff;
+$sub:#DEDEDE;
+$red:#e35b74;
+$pink:#f19db5;
+$yellow:#fdd000;
+$green:#89c997;
+$blue:#9fd9f6;
+$purple:#9d82ba;
+$lavender:#E6E6FA;
+
+@mixin desktop{
+    @media (min-width:600px) {
+        @content;
+    }
+}
+
+@mixin text-gradient($gradient-colors) {
+    color: transparent;
+    background-image: linear-gradient(90deg, $gradient-colors);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent; 
+}
+
+@mixin section-title($gradient-colors) {
+    text-align: center;
+    font-size: 60px;
+    margin: 10px;
+    background: linear-gradient($gradient-colors);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@mixin angle-bg($gradient-colors, $points) {
+    background-image: linear-gradient($gradient-colors);
+    -webkit-clip-path: polygon($points);
+    clip-path: polygon($points);
+}
+
+/*共通部分*/
+html{
+    font-size: 100%;
+    scroll-behavior:smooth;
+    scroll-margin-top: 80px; 
+}
+body{
+    font-family: "Lato","M PLUS Rounded 1c", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: $letter;
+}    
+a{
+    text-decoration: none;
+}
+img{
+    max-width: 100%;
+}
+li{
+    list-style: none;
+}
+.wrapper{
+    max-width: 80vw;
+    margin: 0 auto;
+}
+section[id] { 
+    scroll-margin-top: 80px; 
+}
+
+/*モバイル版*/
+/*header*/
+header{
+    background-color:$letter;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+header .wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+.main-nav{
+    background-image: linear-gradient($letter,$sub);
+    position: absolute;
+    z-index: 2;
+    height: 0;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    transition: .5s;
+}
+.main-nav.open-menu{
+    height: auto;
+    max-height: 500px;
+}
+.logo,.main-nav a{
+    color: $bg;
+}
+.logo{
+    font-size: 20px;
+}
+.main-nav a{
+    font-size: 20px;
+    display: block;
+}
+.menu-btn{
+    color:$bg;
+    padding: .5rem 1rem;
+    border: 1px solid $sub;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
+.main-nav li{
+    text-align: center;
+    margin: 2rem 0;
+}
+
+/*home*/
+#home{
+    background-image: url(../photo/home.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background-blend-mode: luminosity;
+    animation: bg-color 24s infinite;
+    -webkit-clip-path:polygon(0 0,100% 0,100% 90%,0 100%);
+    clip-path:polygon(0 0,100% 0,100% 90%,0 100%);
+}
+@keyframes bg-color{
+    /*背景色　アニメーション*/
+    0% {background-color: $bg;}
+    12.5% {background-color: $pink;}
+    25% {background-color: $red;}
+    37.5% {background-color: $yellow;}
+    50% {background-color: $green;}
+    62.5% {background-color: $blue;}
+    75% {background-color: $purple;}
+    87.5% {background-color: $lavender;}
+    100% {background-color: $bg;}
+}
+h1{
+    font-size: 60px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+.home-date{
+    font-size: 30px;
+    border-top: 3px solid $letter;
+    border-bottom: 3px solid $letter;
+    text-align: center;
+}
+#home p{
+    margin-top: 10px;
+}
+/*about*/
+#about h2{
+    @include section-title(($red,$pink));
+}
+#about p{
+    margin: 10px 0;
+}
+/*news*/
+#news{
+    @include angle-bg(($green, $blue), (0 0, 100% 10%, 100% 90%, 0 100%));
+    padding-bottom: 15px;
+}
+#news h2{
+    color: $bg;
+    text-align: center;
+    font-size: 60px;
+    padding: 10px;
+    padding-top: 30px;
+}
+#news ul{
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+}
+#news li{
+    color: $bg;
+    border-bottom:1px dotted $letter;
+    margin-bottom: 10px;
+    padding: 15px;
+}
+
+/*speaker*/
+#speaker h2{
+    @include section-title(($yellow,$lavender));
+}
+.editor,.writer{
+    margin: 30px 0;
+}
+.editor h4,.writer h4{
+    margin-bottom:20px; 
+}
+.editor p,.writer p{
+    margin-bottom: 10px;
+}
+/*ticket*/
+#ticket{
+    @include angle-bg(($pink, $purple), (0 10%, 100% 0%, 100% 100%, 0 100%));
+}
+#ticket h2{
+    text-align: center;
+    font-size: 60px;
+    margin: 10px;
+    padding: 10px;
+    padding-top: 30px;
+    color: $bg;
+}
+form div{
+    display: flex;
+    flex-direction: column;
+}
+label{
+    color: $bg;
+}
+input[type="text"],input[type="email"]{
+  background-color: $bg;
+  outline: 2px solid $sub;
+  margin-bottom: 10px;
+}
+.btn{
+    background-color: $blue;
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+.footer-nav ul{
+    display: flex;
+    justify-content: center;
+    border-top: 3px solid $bg;
+    margin-top: 20px;
+}
+.footer-nav li{
+    margin-top: 10px;
+}
+.footer-nav a{
+    margin-right: 10px;
+    color:$bg;
+    border-bottom:1px solid $sub;
+}
+.footer-nav small{
+    color: $bg;
+}
+/*デスクトップ版*/
+@include desktop{
+    a,.btn{
+    transition: .3s;
+    }
+    /*header*/
+    .main-nav{
+        display: flex;
+        position: static;
+        justify-content: space-between;
+        background-image: none;
+        width: 100%;
+        top: auto;
+        right: auto;
+        overflow: visible;
+        max-height: none;
+    }
+    .logo{
+    font-size: 30px;
+    }
+    .logo:hover{
+        @include text-gradient(($bg, $pink, $red, $yellow, $green, $blue, $purple, $lavender, $bg));
+    }
+    .menu-btn{
+        display: none;
+        position: static; 
+        padding: 0;
+    }
+    .main-nav li{
+        margin: 0;
+    }
+    .main-nav a{
+        margin-right: 20px;
+        font-size: 25px;
+        display: inline-block;
+    }
+    /*ホバー時グラデーション*/
+    .main-nav a[href*="#about"]:hover{
+        @include text-gradient(($red,$pink));
+    }
+    .main-nav a[href*="#news"]:hover{
+        @include text-gradient(($green,$blue));
+    }
+    .main-nav a[href*="#speaker"]:hover{
+        @include text-gradient(($yellow,$lavender));
+    }
+    .main-nav a[href*="#ticket"]:hover{
+        @include text-gradient(($pink,$purple));
+    }
+
+    /*home*/
+    #home{
+        background-position: center;
+    }
+    h1{
+    font-size: 80px;
+    }
+    .home-date{
+        font-size: 35px;
+        padding: 20px;
+    }
+    .home-info{
+    font-size: 17px;
+    }
+
+    /*about*/
+    #about{
+        text-align: center;
+    }
+
+    /*news*/
+    #news li{
+    display: flex;
+    margin-bottom: 0;
+    }
+    .list-date{
+        width:24%;
+        text-align: right;
+        margin-right: 20px;
+    }
+
+    /*speaker*/
+    .editor,.writer{
+        display: flex;
+        margin: 30px 0;
+    }
+    .editor img,.writer img{
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+    .info p{
+        margin-bottom: 10px;
+    }
+    
+    /*ticket*/
+    form{
+        text-align: center;
+    }
+    label{
+        margin: 10px;
+    }
+    input[type="text"],input[type="email"],.btn{
+        width: 300px;
+        height: 40px;
+        margin: 0 auto;
+    }
+    .btn{
+        height: 50px;
+    }
+    .btn{
+        margin-top: 20px;
+    }
+    .btn:hover{
+        background-color: $lavender;
+    }
+    .footer-nav a:hover{
+        color: $letter;
+    }
+}

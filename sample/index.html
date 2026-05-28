@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scorpion Novel</title>
+    <meta name="description" content="小説の事を一から学べる学習会">
+    <link rel="icon" href="photo/favicon.svg" type="image/svg+xml">
+
+    <!--font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet"><!--M PLUS Rounded 1c-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"><!--Lato-->
+
+    <!--css-->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+    <header>
+        <div class="wrapper">
+            <a href="#home" class="logo">Scorpion Novel</a>
+            <nav>
+                <button class="menu-btn"aria-expanded="false">Menu</button>
+                <ul class="main-nav">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#news">News</a></li>
+                    <li><a href="#speaker">Speaker</a></li>
+                    <li><a href="#ticket">Ticket</a></li>
+                </ul>
+            </nav>
+        </div><!--/.wrapper-->
+    </header>
+    
+    <section id="home">
+        <div class="wrapper">
+            <h1>Scorpion Novel</h1>
+            <p class="home-date">2026.07.14. 17:30~19:00</p>
+            <p class="home-info">
+                オンラインで行っている小説の書き方を学ぶ勉強会ーScorpion Novel <br>
+                今回は、この勉強会を主催している、スコルピー出版で現役で働く編集者と、本を出して頂いている現役作家さんに <br>
+                『小説ってどうやって書くの？』という素朴な疑問から、『新人賞で賞を取る秘訣って？』と一歩踏み込んだ質問まで、根掘り葉掘り質問できます。 <br>
+                参加費は無料！ぜひお気軽にお申し込みください。
+            </p>
+        </div>
+    </section><!--/#home-->
+
+    <section id="about">
+        <div class="wrapper">
+            <h2>About</h2>
+            <p>
+                Scorpion Novelは、オンラインで小説の書き方を学ぶ勉強会です。<br>
+                毎回の開催では、プロの作家や編集者をゲストに招き、小説執筆に関する実践的な知識や技術を共有しています。<br>
+                参加者の皆さんが自身の作品をより魅力的にするためのヒントや、創作活動を継続するためのモチベーションを得られる場を提供しています。<br>
+                小説を書き始めたい初心者の方から、さらにスキルアップを目指したい経験者の方まで、幅広いレベルの方にご参加いただいています。
+            </p>
+            <img src="photo/about.jpg" alt="本">
+        </div>
+    </section><!--/#about-->
+
+    <section id="news">
+        <div class="wrapper">
+            <h2>News</h2>
+            <ul>
+                <li>
+                    <p class="list-date">2026.05.18</p>
+                    <p>参加申し込みを開始しました</p>
+                </li>
+                <li>
+                    <p class="list-date">2026.05.01</p>
+                    <p>登壇者が決定しました</p>
+                </li>
+                <li>
+                    <p class="list-date">2026.04.31</p>
+                    <p>
+                        WEBサイトを、リニューアルしました
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </section><!--/#news-->
+
+    <section id="speaker">
+        <div class="wrapper">
+            <h2>Speaker</h2>
+            <div class="editor">
+                <img src="photo/man.jpg" alt="男性">
+                <div class="info">
+                    <h4> 田中 雄介（たなか ゆうすけ）</h4>
+                    <p>
+                        スコルピー出版の現役編集者。<br>
+                        数々のベストセラー小説を手がけ、新人作家の発掘にも情熱を注いでいます。<br>
+                        作品の魅力を見抜く確かな目と、作家の個性を引き出す的確なアドバイスには定評があります。
+                    </p>
+                    <p>
+                        手がけたヒット作：『時の螺旋の探偵』,『茜色の約束』,『古書店の秘密』
+                    </p>
+                </div>
+            </div>
+
+            <div class="writer">
+                <img src="photo/writer.jpg" alt="女性">
+                <div class="info">
+                    <h4>星野 雫（ほしの しずく）</h4>
+                    <p>
+                        幅広いジャンルで活躍中の人気作家。<br>
+                        独自の視点と心に響くストーリーテリングで、多くの読者を魅了し続けています。
+                    </p>
+                    <p>
+                        主なヒット作：『月夜に咲く花々』,『幻影都市のアリス』,『珈琲と猫と、時々、謎』
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section><!--/#speaker-->
+    <section id="ticket">
+        <div class="wrapper">
+            <h2>Ticket</h2>
+            <form action="#" method="post">
+                <div>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="your-name" placeholder="夜光　星火" required>
+                </div>
+
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="sample@xxx.com" required>
+                </div>
+                <input type="submit" class="btn" value="Let`s join us!">
+            </form>
+            <div class="footer-nav">
+                <ul>
+                    <li><a href="#">お問い合わせ</a></li>
+                    <li><small>&copy; 2026 Scorpion Novel</small></li>
+                </ul>
+            </div>
+        </div><!--wrapper-->
+    </section><!--/#ticket-->
+    <!--JS-->
+    <script src="js/script.js"></script>
+</body>
+</html>
